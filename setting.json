@@ -2,7 +2,7 @@
 	"Db": {
 		"Host": "localhost",
 		"User": "syukur",
-		"Password": "syukurs4j4",
+		"Password": "syukurs4j4!!!",
 		"Database":  "todolist"
 	},
 	"Listen": {
