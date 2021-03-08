@@ -15,8 +15,23 @@ func (r *mutationResolver) CreateTodo(ctx context.Context, input model.NewTodo) 
 	panic(fmt.Errorf("not implemented"))
 }
 
-func (r *queryResolver) Todos(ctx context.Context) ([]*model.Todo, error) {
+func (r *mutationResolver) CreateUser(ctx context.Context, input model.NewUser) (string, error) {
 	panic(fmt.Errorf("not implemented"))
+}
+
+func (r *mutationResolver) Login(ctx context.Context, input model.Login) (string, error) {
+	panic(fmt.Errorf("not implemented"))
+}
+
+func (r *queryResolver) Todos(ctx context.Context) ([]*model.Todo, error) {
+	var todos []*model.Todo
+	dummyTodo := model.Todo{
+		Text: "Dummy Todo",
+		Done: true,
+		User: &model.User{Name: "M Syukur"},
+	}
+	todos = append(todos, &dummyTodo)
+	return todos, nil
 }
 
 // Mutation returns generated.MutationResolver implementation.

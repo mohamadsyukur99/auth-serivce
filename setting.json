@@ -1,0 +1,12 @@
+{
+	"Db": {
+		"Host": "localhost",
+		"User": "syukur",
+		"Password": "syukurs4j4",
+		"Database":  "todolist"
+	},
+	"Listen": {
+		"Address": "*",
+		"Port": "8080"
+	}
+}

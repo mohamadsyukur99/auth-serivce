@@ -2,9 +2,19 @@
 
 package model
 
+type Login struct {
+	Username string `json:"username"`
+	Password string `json:"password"`
+}
+
 type NewTodo struct {
 	Text   string `json:"text"`
 	UserID string `json:"userId"`
+}
+
+type NewUser struct {
+	Username string `json:"username"`
+	Password string `json:"password"`
 }
 
 type Todo struct {
@@ -15,6 +25,8 @@ type Todo struct {
 }
 
 type User struct {
-	ID   string `json:"id"`
-	Name string `json:"name"`
+	ID       string `json:"id"`
+	Name     string `json:"name"`
+	Password string `json:"password"`
+	Status   *bool  `json:"status"`
 }

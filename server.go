@@ -9,14 +9,16 @@ import (
 	"github.com/99designs/gqlgen/graphql/playground"
 	"github.com/mohamadsyukur99/auth-service/graph"
 	"github.com/mohamadsyukur99/auth-service/graph/generated"
+	"github.com/mohamadsyukur99/auth-service/internal/utils"
 )
 
-const defaultPort = "8080"
+// const defaultPort = "8080"
 
 func main() {
+	setting, _ := utils.LoadConfiguration("setting.json")
 	port := os.Getenv("PORT")
 	if port == "" {
-		port = defaultPort
+		port = setting.Listen.Port
 	}
 
 	srv := handler.NewDefaultServer(generated.NewExecutableSchema(generated.Config{Resolvers: &graph.Resolver{}}))
